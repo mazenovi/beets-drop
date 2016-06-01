@@ -28,5 +28,4 @@ Add in your configuration file (config.yaml)
 
 drop:
     unclassified: /your/path/to/Unclassified
-
     incomplete: /your/path/to/Incomplete

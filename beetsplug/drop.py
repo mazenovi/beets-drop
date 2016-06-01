@@ -3,6 +3,10 @@ from beets.ui.commands import PromptChoice
 from beets import importer
 import shutil
 import os
+import sys
+
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class DropPlugin(BeetsPlugin):
     def __init__(self):
@@ -31,5 +35,5 @@ class DropPlugin(BeetsPlugin):
 
     def move_folder_to_unclassified(self, session, task):
         for p in task.paths:
-            shutil.move(p,
+            shutil.move(p.encode('utf8'),
                 self.config['unclassified'].get() + p[len(task.toppath):len(p)])
